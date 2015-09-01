@@ -1,6 +1,10 @@
 # Highlightr (Framer.js Module)
 
-A custom [Framer.js](http://framerjs.com/) module that shows hotspots over clickable `Layer`s in your prototype. This proves useful when creating more complex Framer.js prototypes that have multiple states/screens. This module was created to show what is clickable in the prototype. The nice part is that the hotspots only show when you click on something that is not clickable. Highlightr is very easy to implement and is great for user testing and presentations. This module was inspired by Invision App's hotspots feature. 
+A custom [Framer.js](http://framerjs.com/) module that shows hotspots over clickable `Layer`s in your prototype.
+
+This becomes useful when creating more complex Framer.js prototypes that have multiple states/screens. This module was created to show what is clickable in a prototype. The nice part is that the hotspots only show when you click on something that is not clickable. Highlightr is very easy to implement and is great for user testing, presentations and client reviews. 
+
+This module was inspired by [Invision App](http://www.invisionapp.com)'s hotspots feature. 
 
 ![Highlightr in action](http://jonahvsweb.com/in-the-lab/lib/highlightr/highlightr-intro.gif "Highlightr in action")
 
@@ -36,17 +40,17 @@ The nice part is that the hotspots only show when you click on something that is
 
 [Simple Demo with Project Code Download](http://share.framerjs.com/80xz3qhm34gn/)
 
+The intention was to make this custom module as easy to integrate as possible. That's why I extended the current `Layer` class instead of creating a new Class within the Framer namespace. This makes it easy to use this module for previous prototypes that you've built with Framer. 
+
 ## Uninstall
 
-The intention was to make this custom module as easy to integrate as possible. That's why I extended the current `Layer` class instead of creating a new Class within the namespace. Meaning that even on older prototypes built in Framer it's very simple to go back and add this kind of functionality. 
-
-So to uninstall, you just need to delete all mentions of:
+It is very simple to remove Highlightr. To uninstall, you just need to delete any mentions of:
 
 ```coffeescript
 highlight: true
 ```
 
-and delete the import statement: 
+on any `Layer`s and delete the import statement: 
 
 ```coffeescript
 hl = require "highlightr"
@@ -56,7 +60,7 @@ hl = require "highlightr"
 Highlightr will have more options for small customizations coming soon. Check the roadmap for updates on what's to come. 
 
 #### Kill All Highlights
-If you would like to quickly kill all the highlights throughout the prototype without having to delete `highlight: true` on each that `Layer` that has it you can set this option to `true`.
+If you would like to quickly kill all the highlights throughout the prototype without having to manually delete all the lines of `highlight: true` on each `Layer` then call the `killAllHighlights` property and set it to `true`.
 
 Default value: `'false'`
 ```coffeescript
@@ -72,7 +76,7 @@ hl.killAllHighlights = true
 *This is in active development.*
 
 ## Roadmap
-- Customize hotspot color.
+- Allow customization of the hotspot color.
 - Integrate use for imported Sketch and Photoshop files.
 - Add keyboard shortcut to enable/disable script from a browser.
 
