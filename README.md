@@ -1,6 +1,6 @@
 # Highlightr (Framer.js Module)
 
-A custom [Framer.js](http://framerjs.com/) module that easily shows what are hotspots in your prototype. This proves useful when creating more complex Framer.js prototypes with multiple states/screens by showing what is clickable. The nice part is that the hotspots only show when you click on something that is not clickable. Highlightr is very easy to implement and is great for user testing and presentations.
+A custom [Framer.js](http://framerjs.com/) module that shows hotspots over clickable `Layer`s in your prototype. This proves useful when creating more complex Framer.js prototypes that have multiple states/screens. This module was created to show what is clickable in the prototype. The nice part is that the hotspots only show when you click on something that is not clickable. Highlightr is very easy to implement and is great for user testing and presentations. This module was inspired by Invision App's hotspots feature. 
 
 ![Highlightr in action](http://jonahvsweb.com/in-the-lab/lib/highlightr/highlightr-intro.gif "Highlightr in action")
 
