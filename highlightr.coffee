@@ -1,3 +1,12 @@
+###
+ | Highlightr v1.0.0 - 2015-09-02 
+ | A custom Framer.js module that shows hotspots over clickable Layers in your prototype
+ | https://github.com/jonahvsweb/Framer-Highlightr
+ | 
+ | Copyright (c) 2015 Jonah Bitautas <jonahvsweb@gmail.com> 
+ | 
+ | Released under the MIT license 
+###
 class window.Layer extends Layer
 
 	constructor: (options={}) ->
