@@ -21,7 +21,7 @@ class window.Layer extends Layer
 		@_element.classList.add 'pitchr'
 
 	_dispatch: ->
-		this.addListener 'click', (e) ->
+		this.addListener exports.clickTap, (e) ->
 			evt = new CustomEvent 'pitchr', 
 				detail: 
 					message: 
@@ -35,6 +35,7 @@ class window.Layer extends Layer
 
 			e.currentTarget.dispatchEvent evt
 
+exports.clickTap = if 'ontouchstart' of window then 'touchstart' else 'click'
 exports.killAllHighlights = false
 
 exports.highlightr = ->
@@ -51,7 +52,7 @@ exports.highlightr = ->
 					pitchrs.push layer
 					hasPitchr = true
 
-	window.addEventListener 'click', (e) ->
+	window.addEventListener exports.clickTap, (e) ->
 		if !exports.killAllHighlights 
 			if pitchrs.length <= 0
 				layerList = window.Framer.CurrentContext.getLayers()

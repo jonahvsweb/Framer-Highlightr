@@ -1,7 +1,7 @@
 # Import Highlightr module
 hl = require "highlightr"
 
-hl.killAllHighlights = true
+# hl.killAllHighlights = true
 
 sketch = Framer.Importer.load "imported/page-simple"
 buttons = []

@@ -1,3 +1,12 @@
+###
+ | Highlightr v1.0.0 - 2015-09-02 
+ | A custom Framer.js module that shows hotspots over clickable Layers in your prototype
+ | https://github.com/jonahvsweb/Framer-Highlightr
+ | 
+ | Copyright (c) 2015 Jonah Bitautas <jonahvsweb@gmail.com> 
+ | 
+ | Released under the MIT license 
+###
 class window.Layer extends Layer
 
 	constructor: (options={}) ->
@@ -12,7 +21,7 @@ class window.Layer extends Layer
 		@_element.classList.add 'pitchr'
 
 	_dispatch: ->
-		this.addListener 'click', (e) ->
+		this.addListener exports.clickTap, (e) ->
 			evt = new CustomEvent 'pitchr', 
 				detail: 
 					message: 
@@ -26,6 +35,7 @@ class window.Layer extends Layer
 
 			e.currentTarget.dispatchEvent evt
 
+exports.clickTap = if 'ontouchstart' of window then 'touchstart' else 'click'
 exports.killAllHighlights = false
 
 exports.highlightr = ->
@@ -42,7 +52,7 @@ exports.highlightr = ->
 					pitchrs.push layer
 					hasPitchr = true
 
-	window.addEventListener 'click', (e) ->
+	window.addEventListener exports.clickTap, (e) ->
 		if !exports.killAllHighlights 
 			if pitchrs.length <= 0
 				layerList = window.Framer.CurrentContext.getLayers()
