@@ -72,8 +72,11 @@ hl.killAllHighlights = true
 `hl` represents whatever you define Highlightr as when you `require` it in the beginning of your project.
 
 ## Release Notes
-**Highlightr 1.0**   
-– Initial Release       
+**Highlightr 1.0**
+– Initial Release 
+
+**Highlightr 1.0.1**
+– Fix issue with mobile touchevents
 
 *This is in active development.*
 
